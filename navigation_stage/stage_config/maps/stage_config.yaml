@@ -1,0 +1,9 @@
+# image: willow-full-0.025_editted.pgm
+image: willow-full-0.025.pgm
+resolution: 0.025
+origin: [0, 0, 0] # same as default value
+negate: 0 # same as default value
+occupied_thresh: 0.65 # same as default value
+free_thresh: 0.196 # same as default value
+mode: trinary
+# mode: raw
