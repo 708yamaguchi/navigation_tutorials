@@ -188,12 +188,12 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: raw
       Draw Behind: false
-      Enabled: true
+      Enabled: false
       Name: RawMaxVelocityMap
       Topic: /max_velocity_map
       Unreliable: false
       Use Timestamp: false
-      Value: true
+      Value: false
     - Class: rviz/TF
       Enabled: false
       Frame Timeout: 15
@@ -258,10 +258,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.36539733
+      Pitch: 1.56979632
       Target Frame: base_link
       Value: ThirdPersonFollower (rviz)
-      Yaw: 3.11357164
+      Yaw: 3.09357095
     Saved: ~
 Window Geometry:
   Displays:
