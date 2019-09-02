@@ -1,7 +1,9 @@
 <launch>
   <master auto="start"/>
   <param name="/use_sim_time" value="true"/>
+
   <include file="$(find navigation_stage)/move_base_config/move_base.xml"/>
+
   <!-- for amcl and planner in move_base -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find navigation_stage)/stage_config/maps/willow-full-0.025.pgm 0.025" />
   <!-- for speed_limit_map in move_base -->
@@ -10,9 +12,17 @@
     <remap from="map" to="speed_limit_map" />
     <remap from="static_map" to="static_speed_limit_map" />
   </node>
+
   <node pkg="stage_ros" type="stageros" name="stageros" args="$(find navigation_stage)/stage_config/worlds/willow-pr2-2.5cm.world" respawn="false" >
     <param name="base_watchdog_timeout" value="0.2"/>
   </node>
+
   <include file="$(find navigation_stage)/move_base_config/amcl_node.xml"/>
+
+  <!-- republish cmd_vel to cmd_vel_x for visualization-->
+  <node pkg="topic_tools" type="transform" name="transform_velocity" output="screen"
+        args="/cmd_vel /cmd_vel_x std_msgs/Float32 'm.linear.x' --wait-for-start" >
+  </node>
+
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" />
 </launch>
