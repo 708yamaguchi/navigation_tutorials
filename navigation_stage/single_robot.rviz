@@ -189,8 +189,8 @@ Visualization Manager:
       Color Scheme: raw
       Draw Behind: false
       Enabled: false
-      Name: RawMaxVelocityMap
-      Topic: /max_velocity_map
+      Name: RawSpeedLimitMap
+      Topic: /speed_limit_map
       Unreliable: false
       Use Timestamp: false
       Value: false
@@ -213,7 +213,7 @@ Visualization Manager:
       Color Scheme: raw
       Draw Behind: false
       Enabled: true
-      Name: MaxVelocityMap
+      Name: SpeedLimitMap
       Topic: /move_base_node/local_costmap/speedmap
       Unreliable: false
       Use Timestamp: false

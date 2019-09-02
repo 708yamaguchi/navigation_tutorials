@@ -10,7 +10,7 @@ global_costmap:
   publish_frequency: 0.0
 
   #We'll use a map served by the map_server to initialize this costmap
-  max_velocity_map: false
+  speed_limit_map: false
   static_map: true
   rolling_window: false
 

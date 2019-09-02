@@ -4,11 +4,11 @@
   <include file="$(find navigation_stage)/move_base_config/move_base.xml"/>
   <!-- for amcl and planner in move_base -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find navigation_stage)/stage_config/maps/willow-full-0.025.pgm 0.025" />
-  <!-- for max_velocity_map in move_base -->
-  <node name="max_velocity_map_server" pkg="map_server" type="map_server" args="$(find navigation_stage)/stage_config/maps/stage_config.yaml">
-    <remap from="map_metadata" to="max_velocity_map_metadata" />
-    <remap from="map" to="max_velocity_map" />
-    <remap from="static_map" to="static_max_velocity_map" />
+  <!-- for speed_limit_map in move_base -->
+  <node name="speed_limit_map_server" pkg="map_server" type="map_server" args="$(find navigation_stage)/stage_config/maps/stage_config.yaml">
+    <remap from="map_metadata" to="speed_limit_map_metadata" />
+    <remap from="map" to="speed_limit_map" />
+    <remap from="static_map" to="static_speed_limit_map" />
   </node>
   <node pkg="stage_ros" type="stageros" name="stageros" args="$(find navigation_stage)/stage_config/worlds/willow-pr2-2.5cm.world" respawn="false" >
     <param name="base_watchdog_timeout" value="0.2"/>
