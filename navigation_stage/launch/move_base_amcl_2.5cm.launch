@@ -8,4 +8,10 @@
   </node>
   <include file="$(find navigation_stage)/move_base_config/amcl_node.xml"/>  
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" />
+
+  <node pkg="map_server" type="map_server" name="speed_limit_map_server"
+        args="$(find navigation_stage)/stage_config/maps/willow-full-0.05.pgm 0.05">
+    <remap from="map" to="speed_limit_map" />
+    <remap from="map_metadata" to="speed_limit_map_metadata" />
+  </node>
 </launch>
